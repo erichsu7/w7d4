@@ -7,7 +7,7 @@ window.NewsReader = {
     NewsReader.feeds = new NewsReader.Collections.Feeds();
     NewsReader.feeds.fetch();
 
-    new NewsReader.Routers.Feeds({ $rootEl: $('#content') });
+    new NewsReader.Routers.Feeds({ $rootEl: $('#body') });
     Backbone.history.start();
   }
 };
