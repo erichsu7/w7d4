@@ -1,5 +1,5 @@
 NewsReader.Models.Entry = Backbone.Model.extend({
-  rootUrl: function () {
+  urlRoot: function () {
     return this.feed.url() + '/entries';
   },
 

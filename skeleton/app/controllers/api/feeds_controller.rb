@@ -1,6 +1,6 @@
 class Api::FeedsController < ApplicationController
   def index
-    render :json => Feed.all
+    render :json => Feed.all.sort_by { |feed| feed.title }
   end
 
   def show
@@ -14,6 +14,13 @@ class Api::FeedsController < ApplicationController
     else
       render :json => { error: "invalid url" }, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    feed = Feed.find(params[:id]);
+    feed.destroy();
+
+    render json: nil;
   end
 
   private

@@ -42,6 +42,6 @@ class Feed < ActiveRecord::Base
     if self.updated_at < 30.seconds.ago
       self.reload
     end
-    self.entries
+    self.entries.sort_by{ |entry| entry.published_at }.reverse
   end
 end

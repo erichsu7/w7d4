@@ -1,13 +1,14 @@
 NewsReader.Models.Feed = Backbone.Model.extend({
-  rootUrl: "api/feeds",
+  urlRoot: "api/feeds",
 
   initialize: function () {
     this.listenTo(this, "sync", this.render);
   },
 
-  url: function () {
-    return "api/feeds/" + this.id;
-  },
+  // url: function () {
+  //
+  //   return "api/feeds/" + this.id;
+  // },
 
   entries: function () {
     this._entries = this._entries || new NewsReader.Collections.Entries([], { feed: this });
